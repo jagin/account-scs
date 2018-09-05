@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html lang="{{i18n.language}}">
+  <head>
+    <meta charset="UTF-8">
+    <noscript>
+      <meta http-equiv="refresh" content="1; url={{returnToUrl}}">
+    </noscript>
+    <script type="text/javascript">
+        setTimeout(function(){location.href='{{returnToUrl}}'} , 1000);
+    </script>
+    <title>SCS-Account</title>
+  </head>
+  <body>
+    {{{i18n "loginRedirectLink" returnToUrl=returnToUrl}}}
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{{#unless isAuthenticated}}
+<li class="nav-item">
+  <a class="nav-link" href="/account/auth0/login?lang={{i18n.language}}&amp;returnTo={{encodeURI (replace '/{{scs}}/{{lang}}' scs=scs lang=i18n.language)}}">{{i18n "login"}}</a>
+</li>
+{{else}}
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="{{credentials.picture}}" width="24" height="24" class="d-inline-block align-top rounded-circle" alt=""> {{credentials.name}}</a>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="/account/{{i18n.language}}">{{i18n "account"}}</a>
+    <a class="dropdown-item" href="/account/auth0/logout?returnTo={{encodeURI (replace '/{{scs}}/{{lang}}' scs=scs lang=i18n.language)}}">{{i18n "logout"}}</a>
+  </div>
+</li>
+{{/unless}}

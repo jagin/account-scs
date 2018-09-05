@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+
+  account-scs:
+    image: account-scs
+    build:
+      context: .
+    container_name: account-scs
+    env_file: .env
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    # expose:
+    #   - "9229"
+    # ports:
+    #   - "9229:9229"
+    entrypoint:
+      - npm
+      - run
+      - nodemon
+      # - --
+      # - --inspect
