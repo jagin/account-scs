@@ -10,9 +10,12 @@ const envVarsSchema = Joi.object({
   PORT: Joi.number()
     .default(8000),
   JWT_KEY: Joi.string(),
-  JWT_AUDIENCE: Joi.string(),
-  JWT_ISSUER: Joi.string(),
-  JWT_COOKIE_DOMAIN: Joi.string().default('localhost'),
+  JWT_AUDIENCE: Joi.string()
+    .allow(''),
+  JWT_ISSUER: Joi.string()
+    .allow(''),
+  JWT_COOKIE_DOMAIN: Joi.string()
+    .default('localhost'),
   AUTH0_COOKIE_PASSWORD: Joi.string()
     .required(),
   AUTH0_CLIENT_ID: Joi.string()
